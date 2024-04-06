@@ -18,7 +18,7 @@ const Home = () => {
   }
     return (
     <div className ={styles.cardWrapper}>
-      <Card title="Welcome to codershouse!" icon="logo"> 
+      <Card title="Welcome to boardroom!" icon="logo"> 
       <p className = {styles.text}>
             CodersHouse is a platform for learning full stack web development. It is open to all. 
             It is a community of programmers who come together to learn and grow their programming skills. 

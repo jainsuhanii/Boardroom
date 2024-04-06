@@ -11,18 +11,18 @@ const Phone = ({ onNext }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const dispatch = useDispatch();
 
-    async function submit() {
-        if (!phoneNumber) return;
-        try {
-            const { data } = await sendOtp({ phone: phoneNumber });
-            console.log(data);
-            dispatch(setOtp({ phone: data.phone, hash: data.hash }));
-            onNext();
-        } catch (error) {
-            console.error(error);
-            // Handle the error appropriately
-        }
+async function submit() {
+    if (!phoneNumber) return;
+    try {
+        const { data } = await sendOtp({ phone: phoneNumber });
+        console.log(data);
+        dispatch(setOtp({ phone: data.phone, hash: data.hash }));
+        onNext();
+    } catch (error) {
+        console.error("Network error: ", error);
+        // Handle the error appropriately here
     }
+}
 
     return (
         <Card title="Enter you phone number" icon="phone">
